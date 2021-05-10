@@ -71,7 +71,7 @@ function App() {
               <div className="weather">{weather.weather[0].main}
               <img className={(typeof weather.main != "undefined") 
               ?  ((weather.weather[0].description === "scattered clouds") ? 'icon clouds' : (weather.weather[0].description === "clear sky") ? 'icon clear' : 'icon'): 'icon'}
-               src="" alt="Icons" /></div>
+               src="" alt="" /></div>
             </div>
           </div>
         ): ('')}
