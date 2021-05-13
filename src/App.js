@@ -47,8 +47,10 @@ function App() {
           sunsethours = 19;
         }        
         
-        if(sunsethours < timezoneHours){
-          
+        if(timezoneHours >= 24){
+          timezoneHours = timezoneHours- 24
+        }  
+        if(sunsethours < timezoneHours){          
           setDayorNight('Night');                                    
         } else if((sunsethours === timezoneHours) && (sunset.getMinutes() < now.getUTCMinutes())){
           setDayorNight('Night');                 
@@ -131,10 +133,14 @@ function App() {
         sunsethours = 19;
       }
       
-      
-      if(sunsethours < timezoneHours){
+      console.log(sunsethours, timezoneHours)
+      if(timezoneHours >= 24){
+        timezoneHours = timezoneHours- 24
+      }     
+
+      if(sunsethours > timezoneHours){
         setDayorNight('Night');
-                                  
+        console.log(sunsethours, timezoneHours)                         
       } else if(sunsethours === timezoneHours && sunset.getMinutes > now.getUTCMinutes())       
        {
           setDayorNight('Night');                 
