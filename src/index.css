@@ -8,15 +8,38 @@ body {
   font-family: "montseratt", sans-serif;
 }
 
-.app {
-  background-image: url("./assets/cold-bg.jpg");
+.app.coldnight {
+  background-image: url("./assets/cold-night.jpg");
   background-size: cover;
   background-position: bottom;
   transition: 0.4s ease-out;
 }
 
-.app.warm {
-  background-image: url("./assets/warm-bg.jpg");
+.app.coldday {
+  background-image: url("./assets/coldday.jpg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-out;
+}
+
+.app.warmday {
+  background-image: url("./assets/warmday.jpg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-out;
+}
+
+.app.warmnight {
+  background-image: url("./assets/warmnight.jpg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s ease-out;
+}
+.app {
+  background-image: url("./assets/default.png");
+  transition: 0.4s ease-out;
+  background-size: cover;
+  background-position: bottom;
 }
 
 main {
@@ -111,19 +134,14 @@ main {
   align-items: center;
 }
 
-.icon.clouds {
-  content: url("http://openweathermap.org/img/wn/03d@2x.png");
-  align-items: center;
-  text-align: center;
-}
-
-.icon.clear {
-  content: url("http://openweathermap.org/img/wn/01d@2x.png");
-}
-
 @media (min-width: 770px) {
   .app {
     background-position: center;
-    transition: 0.4s ease-out;
+    transition: 0.4s ease;
+  }
+
+  .search-box {
+    display: grid;
+    justify-content: center;
   }
 }
