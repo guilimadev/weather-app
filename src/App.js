@@ -48,6 +48,7 @@ function App() {
       
         }
           console.log(dayornight)
+          console.log(result.sys.sunrise)
       } 
       });
 
@@ -109,10 +110,20 @@ function App() {
 
     
     
-    let minutes = now.getUTCMinutes();
+    let minutes = `${now.getUTCMinutes()}`
     
     if(now.getUTCMinutes() < 10){
-      minutes = `0${now.getUTCMinutes}`
+      minutes = '0' + now.getUTCMinutes()
+    }
+
+    if(timezoneHours >= 24){
+      timezoneHours = timezoneHours - 24
+
+
+
+      if(timezoneHours < 10){
+        timezoneHours = '0' + timezoneHours;
+      } 
     }
 
     return `${timezoneHours}:${minutes}`
